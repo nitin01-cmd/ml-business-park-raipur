@@ -33,16 +33,11 @@ export function SiteNav() {
       )}
     >
       <nav className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 lg:px-10">
-        <a href="#home" className="flex min-w-0 items-center gap-3 font-display transition-colors">
-          <img
-            src="/poster.jpg"
-            alt="M L Business Park Ramsagar Para Raipur"
-            className="h-8 w-8 shrink-0 rounded-full border border-white/30 object-cover shadow-sm transition-transform hover:scale-105"
-          />
+        <a href="#home" className="flex min-w-0 items-center font-display transition-colors">
           <span
             className={cn(
-              "truncate text-lg tracking-[0.28em] transition-colors sm:text-xl",
-              scrolled ? "text-foreground" : "text-primary-foreground",
+              "whitespace-nowrap text-xs font-medium tracking-[0.22em] transition-colors drop-shadow-sm sm:text-sm",
+              scrolled ? "text-foreground" : "text-white",
             )}
           >
             M L BUSINESS PARK
@@ -92,14 +87,7 @@ export function SiteNav() {
       {open && (
         <div className="fixed inset-0 z-50 overflow-y-auto bg-background lg:hidden">
           <div className="flex items-center justify-between px-5 py-4">
-            <div className="flex items-center gap-2">
-              <img
-                src="/poster.jpg"
-                alt="M L Business Park"
-                className="h-7 w-7 rounded-full object-cover"
-              />
-              <span className="font-display text-lg tracking-[0.28em]">M L BUSINESS PARK</span>
-            </div>
+            <span className="font-display text-sm tracking-[0.22em]">M L BUSINESS PARK</span>
             <button type="button" aria-label="Close menu" onClick={() => setOpen(false)}>
               <X className="h-6 w-6" />
             </button>
@@ -107,9 +95,9 @@ export function SiteNav() {
 
           <div className="relative mx-5 my-3 overflow-hidden rounded-md border border-border bg-muted">
             <img
-              src="/poster.jpg"
+              src="/navbar-logo.png"
               alt="M L Business Park Commercial Complex Poster"
-              className="h-36 w-full object-cover"
+              className="h-40 w-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-4 flex flex-col justify-end">
               <p className="font-display text-lg text-white">M L Business Park</p>
