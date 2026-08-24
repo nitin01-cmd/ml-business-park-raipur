@@ -55,28 +55,28 @@ const amenities = [
 
 export function Amenities() {
   return (
-    <section id="amenities" className="bg-secondary/60 py-24 lg:py-32">
-      <div className="mx-auto max-w-7xl px-5 lg:px-10">
+    <section id="amenities" className="bg-secondary/60 py-16 sm:py-24 lg:py-32">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
         <Reveal className="max-w-3xl">
           <p className="eyebrow">Amenities</p>
-          <h2 className="mt-5 font-display text-4xl leading-[1.05] sm:text-5xl lg:text-6xl">
+          <h2 className="mt-4 font-display text-3xl leading-[1.1] sm:text-5xl lg:text-6xl">
             Everything Your Business Needs Under One Roof.
           </h2>
         </Reveal>
 
-        <div className="mt-16 grid gap-px border-t border-border sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 sm:mt-16 grid gap-px border-t border-border sm:grid-cols-2 lg:grid-cols-4">
           {amenities.map((a, i) => (
             <Reveal
               key={a.title}
               delay={(i % 4) * 70}
-              className="group border-b border-border py-9 sm:pr-8"
+              className="group border-b border-border py-6 sm:py-9 sm:pr-6 lg:pr-8"
             >
               <a.icon
                 className="h-5 w-5 text-accent transition-transform duration-500 group-hover:-translate-y-1"
                 aria-hidden
               />
-              <h3 className="mt-5 font-display text-2xl">{a.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{a.text}</p>
+              <h3 className="mt-3.5 font-display text-xl sm:text-2xl">{a.title}</h3>
+              <p className="mt-1.5 text-xs sm:text-sm leading-relaxed text-muted-foreground">{a.text}</p>
             </Reveal>
           ))}
         </div>

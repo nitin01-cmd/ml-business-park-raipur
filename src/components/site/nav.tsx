@@ -23,20 +23,50 @@ export function SiteNav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && open) {
+        setOpen(false);
+      }
+    };
+    const onResize = () => {
+      if (window.innerWidth >= 1024 && open) {
+        setOpen(false);
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    window.addEventListener("resize", onResize);
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+      window.removeEventListener("resize", onResize);
+    };
+  }, [open]);
+
   return (
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500",
         scrolled
-          ? "border-b border-border bg-background/90 backdrop-blur-md"
+          ? "border-b border-border bg-background/95 backdrop-blur-md"
           : "border-b border-transparent",
       )}
     >
-      <nav className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 lg:px-10">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3.5 sm:px-6 lg:px-10 lg:py-4">
         <a href="#home" className="flex min-w-0 items-center font-display transition-colors">
           <span
             className={cn(
-              "whitespace-nowrap text-xs font-medium tracking-[0.22em] transition-colors drop-shadow-sm sm:text-sm",
+              "truncate text-[0.8rem] font-medium tracking-[0.16em] transition-colors drop-shadow-sm sm:text-sm sm:tracking-[0.22em]",
               scrolled ? "text-foreground" : "text-white",
             )}
           >
@@ -44,17 +74,17 @@ export function SiteNav() {
           </span>
         </a>
 
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-6">
           <ul className="hidden items-center gap-7 lg:flex">
             {links.map((l) => (
               <li key={l.href}>
                 <a
                   href={l.href}
                   className={cn(
-                    "text-[0.8rem] tracking-wide transition-colors",
+                    "text-[0.8rem] tracking-wide transition-colors hover:underline underline-offset-4",
                     scrolled
                       ? "text-muted-foreground hover:text-accent"
-                      : "text-primary-foreground/80 hover:text-primary-foreground",
+                      : "text-primary-foreground/90 hover:text-primary-foreground",
                   )}
                 >
                   {l.label}
@@ -77,52 +107,62 @@ export function SiteNav() {
             type="button"
             aria-label="Open menu"
             onClick={() => setOpen(true)}
-            className={cn("lg:hidden", scrolled ? "text-foreground" : "text-primary-foreground")}
+            className={cn(
+              "flex h-10 w-10 items-center justify-center rounded-md border border-white/20 transition-colors lg:hidden active:scale-95",
+              scrolled ? "border-border text-foreground bg-muted/50" : "text-primary-foreground bg-black/20 backdrop-blur-xs",
+            )}
           >
-            <Menu className="h-6 w-6" />
+            <Menu className="h-5 w-5" />
           </button>
         </div>
       </nav>
 
       {open && (
-        <div className="fixed inset-0 z-50 overflow-y-auto bg-background lg:hidden">
-          <div className="flex items-center justify-between px-5 py-4">
-            <span className="font-display text-sm tracking-[0.22em]">M L BUSINESS PARK</span>
-            <button type="button" aria-label="Close menu" onClick={() => setOpen(false)}>
-              <X className="h-6 w-6" />
+        <div className="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-background/98 backdrop-blur-xl lg:hidden">
+          <div className="flex items-center justify-between border-b border-border px-5 py-3.5">
+            <span className="font-display text-xs sm:text-sm font-semibold tracking-[0.18em]">M L BUSINESS PARK</span>
+            <button
+              type="button"
+              aria-label="Close menu"
+              onClick={() => setOpen(false)}
+              className="flex h-10 w-10 items-center justify-center rounded-md border border-border bg-muted text-foreground active:scale-95"
+            >
+              <X className="h-5 w-5" />
             </button>
           </div>
 
-          <div className="relative mx-5 my-3 overflow-hidden rounded-md border border-border bg-muted">
+          <div className="relative mx-5 my-4 overflow-hidden rounded-lg border border-border bg-muted shrink-0">
             <img
               src="/navbar-logo.png"
               alt="M L Business Park Commercial Complex Poster"
-              className="h-40 w-full object-cover"
+              className="h-36 w-full object-cover object-top"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-4 flex flex-col justify-end">
-              <p className="font-display text-lg text-white">M L Business Park</p>
-              <p className="text-xs text-white/80">Ramsagar Para, Raipur</p>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-4 flex flex-col justify-end">
+              <p className="font-display text-lg text-white font-medium">M L Business Park</p>
+              <p className="text-xs text-white/80">Ramsagar Para, Raipur, Chhattisgarh</p>
             </div>
           </div>
 
-          <ul className="mt-4 flex flex-col gap-1 px-5">
+          <ul className="flex flex-col gap-0.5 px-5">
             {links.map((l) => (
               <li key={l.href}>
                 <a
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="block border-b border-border py-3.5 font-display text-2xl"
+                  className="flex items-center justify-between border-b border-border/60 py-3.5 font-display text-xl font-medium tracking-wide text-foreground transition-colors active:text-accent"
                 >
-                  {l.label}
+                  <span>{l.label}</span>
+                  <span className="text-xs text-muted-foreground">→</span>
                 </a>
               </li>
             ))}
           </ul>
-          <div className="mt-6 flex flex-col gap-3 px-5 pb-8">
+
+          <div className="mt-auto flex flex-col gap-3 px-5 pt-6 pb-10">
             <a
               href="#enquire"
               onClick={() => setOpen(false)}
-              className="bg-accent px-6 py-4 text-center text-xs tracking-[0.18em] text-accent-foreground uppercase"
+              className="flex min-h-[44px] items-center justify-center bg-accent px-6 py-3.5 text-center text-xs tracking-[0.18em] text-accent-foreground uppercase font-medium rounded active:opacity-90"
             >
               Enquire Now
             </a>
@@ -130,9 +170,9 @@ export function SiteNav() {
               href={contact.whatsapp}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center justify-center gap-2 border border-border px-6 py-4 text-xs tracking-[0.18em] uppercase"
+              className="flex min-h-[44px] items-center justify-center gap-2 border border-border px-6 py-3 text-xs tracking-[0.18em] uppercase font-medium rounded text-foreground active:bg-muted"
             >
-              <MessageCircle className="h-4 w-4" /> WhatsApp
+              <MessageCircle className="h-4 w-4 text-emerald-600 dark:text-emerald-400" /> WhatsApp Direct
             </a>
           </div>
         </div>

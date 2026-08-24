@@ -1,5 +1,4 @@
-@import "tailwindcss" source(none);
-@source "../src";
+@import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -100,7 +99,8 @@
 
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 5rem;
+    scroll-padding-top: 4.5rem;
+    overflow-x: hidden;
   }
 
   body {
@@ -108,6 +108,9 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
   }
 
   h1,
@@ -117,30 +120,53 @@
     font-weight: 300;
     letter-spacing: -0.015em;
   }
-}
 
-@utility eyebrow {
-  font-size: 0.6875rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--color-muted-foreground);
-}
+  /* Prevent mobile Safari from zooming in on input focus */
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
 
-@utility reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition:
-    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-
-  &[data-visible="true"] {
-    opacity: 1;
-    transform: none;
+  @media (min-width: 640px) {
+    input,
+    select,
+    textarea {
+      font-size: 0.875rem;
+    }
   }
 }
 
-@utility hairline {
-  height: 1px;
-  width: 100%;
-  background: var(--color-border);
+@layer utilities {
+  .eyebrow {
+    font-size: 0.6875rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-muted-foreground);
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+
+    &[data-visible="true"] {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .hairline {
+    height: 1px;
+    width: 100%;
+    background: var(--color-border);
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
 }
+
+

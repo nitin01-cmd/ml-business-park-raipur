@@ -17,7 +17,7 @@ const schema = z.object({
 });
 
 const field =
-  "w-full border-b border-border bg-transparent py-3 text-sm outline-none transition-colors placeholder:text-muted-foreground/70 focus:border-accent";
+  "w-full border-b border-border bg-transparent py-3 text-base sm:text-sm outline-none transition-colors placeholder:text-muted-foreground/70 focus:border-accent";
 
 export function Enquiry() {
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -43,22 +43,22 @@ export function Enquiry() {
   }
 
   return (
-    <section id="enquire" className="mx-auto max-w-7xl px-5 py-24 lg:px-10 lg:py-32">
-      <div className="grid gap-14 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-20">
+    <section id="enquire" className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-24 lg:px-10 lg:py-32">
+      <div className="grid gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-20">
         <Reveal className="min-w-0">
           <p className="eyebrow">Enquiry</p>
-          <h2 className="mt-5 font-display text-4xl leading-[1.05] sm:text-5xl">
+          <h2 className="mt-4 font-display text-3xl leading-[1.1] sm:text-5xl">
             Looking for the Right Space for Your Business?
           </h2>
-          <p className="mt-6 text-[0.95rem] leading-relaxed text-muted-foreground">
+          <p className="mt-4 text-xs sm:text-sm leading-relaxed text-muted-foreground">
             Tell us what you need and our team will help you find the right commercial space at M L
             Business Park.
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-3">
+          <div className="mt-8 flex flex-col sm:flex-row gap-3">
             <a
               href={contact.phoneHref}
-              className="inline-flex items-center gap-2 border border-foreground/25 px-6 py-3.5 text-[0.68rem] tracking-[0.18em] uppercase transition-colors hover:border-accent hover:text-accent"
+              className="flex min-h-[44px] items-center justify-center gap-2 border border-foreground/25 px-6 py-3.5 text-[0.68rem] font-medium tracking-[0.18em] uppercase transition-colors hover:border-accent hover:text-accent rounded active:bg-muted"
             >
               <Phone className="h-4 w-4" /> Call Now
             </a>
@@ -66,15 +66,15 @@ export function Enquiry() {
               href={contact.whatsapp}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 border border-foreground/25 px-6 py-3.5 text-[0.68rem] tracking-[0.18em] uppercase transition-colors hover:border-accent hover:text-accent"
+              className="flex min-h-[44px] items-center justify-center gap-2 border border-foreground/25 px-6 py-3.5 text-[0.68rem] font-medium tracking-[0.18em] uppercase transition-colors hover:border-accent hover:text-accent rounded active:bg-muted"
             >
-              <MessageCircle className="h-4 w-4" /> WhatsApp Enquiry
+              <MessageCircle className="h-4 w-4 text-emerald-600 dark:text-emerald-400" /> WhatsApp Enquiry
             </a>
           </div>
         </Reveal>
 
         <Reveal delay={120} className="min-w-0">
-          <form onSubmit={onSubmit} noValidate className="grid gap-7 sm:grid-cols-2">
+          <form onSubmit={onSubmit} noValidate className="grid gap-6 sm:grid-cols-2">
             <Field label="Name" name="name" error={errors["name"]} required />
             <Field label="Company / Business Name" name="company" />
             <Field label="Phone Number" name="phone" type="tel" error={errors["phone"]} required />
@@ -106,10 +106,10 @@ export function Enquiry() {
                 placeholder="Tell us about your requirement"
               />
             </div>
-            <div className="sm:col-span-2">
+            <div className="sm:col-span-2 pt-2">
               <button
                 type="submit"
-                className="w-full bg-accent px-8 py-4 text-[0.7rem] tracking-[0.2em] text-accent-foreground uppercase transition-opacity hover:opacity-90 sm:w-auto"
+                className="flex min-h-[46px] w-full items-center justify-center bg-accent px-8 py-3.5 text-[0.7rem] font-medium tracking-[0.2em] text-accent-foreground uppercase transition-opacity hover:opacity-90 active:scale-[0.99] sm:w-auto rounded"
               >
                 Request a Callback
               </button>

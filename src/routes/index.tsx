@@ -8,6 +8,7 @@ import { Gallery } from "@/components/site/gallery";
 import { Location } from "@/components/site/location";
 import { Why } from "@/components/site/why";
 import { Enquiry } from "@/components/site/enquiry";
+import { MobileActions } from "@/components/site/mobile-actions";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -27,12 +28,14 @@ function Index() {
         <Why />
         <Enquiry />
       </main>
-      <footer className="border-t border-border bg-background py-8 text-center text-xs text-muted-foreground">
+      <footer className="border-t border-border bg-background pt-8 pb-24 text-center text-xs text-muted-foreground lg:pb-8">
         <p>
           © {new Date().getFullYear()} M L Business Park, Ramsagar Para, Raipur. All rights
           reserved.
         </p>
       </footer>
+      <MobileActions />
     </div>
   );
 }
+

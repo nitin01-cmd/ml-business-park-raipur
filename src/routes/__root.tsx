@@ -8,6 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import { Toaster } from "sonner";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -76,15 +77,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=5" },
+      { title: "M L Business Park | Commercial Spaces & Offices for Rent in Raipur" },
+      {
+        name: "description",
+        content:
+          "M L Business Park offers premium commercial, retail & office spaces for rent in Ramsagar Para, Raipur, Chhattisgarh. Modern infrastructure, prime location & flexible options.",
+      },
+      { name: "author", content: "M L Business Park" },
+      { property: "og:title", content: "M L Business Park | Commercial Spaces in Raipur" },
+      {
+        property: "og:description",
+        content:
+          "Explore modern commercial spaces, office suites, and retail units for rent at M L Business Park, Ramsagar Para, Raipur.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "M L Business Park Raipur" },
     ],
     links: [
       {
@@ -121,6 +130,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
+      <Toaster position="top-center" richColors />
     </QueryClientProvider>
   );
 }

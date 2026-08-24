@@ -32,12 +32,12 @@ const reasons = [
 
 export function Why() {
   return (
-    <section className="mx-auto max-w-7xl px-5 py-24 lg:px-10 lg:py-32">
-      <div className="grid gap-14 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1fr)] lg:gap-20">
+    <section className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-24 lg:px-10 lg:py-32">
+      <div className="grid gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1fr)] lg:gap-20">
         <div className="min-w-0">
           <Reveal>
             <p className="eyebrow">Why here</p>
-            <h2 className="mt-5 font-display text-4xl leading-[1.05] sm:text-5xl">
+            <h2 className="mt-4 font-display text-3xl leading-[1.1] sm:text-5xl">
               Why Businesses Choose M L Business Park
             </h2>
           </Reveal>
@@ -46,7 +46,7 @@ export function Why() {
               src={photos.corridor}
               alt="Business corridor with professional office units at M L Business Park"
               loading="lazy"
-              className="aspect-[4/5] w-full rounded-sm object-cover"
+              className="aspect-[4/5] w-full rounded-md object-cover"
             />
           </Reveal>
         </div>
@@ -56,14 +56,14 @@ export function Why() {
             <Reveal
               key={r.n}
               delay={i * 60}
-              className="group grid grid-cols-[auto_minmax(0,1fr)] gap-6 border-b border-border py-7 first:border-t"
+              className="group grid grid-cols-[auto_minmax(0,1fr)] gap-4 sm:gap-6 border-b border-border py-5 sm:py-7 first:border-t"
             >
-              <span className="font-display text-lg text-accent">{r.n}</span>
+              <span className="font-display text-base sm:text-lg font-semibold text-accent">{r.n}</span>
               <div className="min-w-0">
-                <h3 className="font-display text-2xl transition-colors group-hover:text-accent">
+                <h3 className="font-display text-xl sm:text-2xl transition-colors group-hover:text-accent">
                   {r.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{r.text}</p>
+                <p className="mt-1.5 text-xs sm:text-sm leading-relaxed text-muted-foreground">{r.text}</p>
               </div>
             </Reveal>
           ))}
