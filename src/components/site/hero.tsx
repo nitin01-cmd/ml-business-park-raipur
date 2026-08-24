@@ -17,7 +17,7 @@ export function Hero() {
     <section id="home" className="relative min-h-[100svh] overflow-hidden bg-primary">
       <img
         src={photos.facade}
-        alt="M L Business Park commercial complex facade in Ramsagar Para, Raipur"
+        alt="ML Business Park commercial complex facade in Ramsagar Para, Raipur"
         fetchPriority="high"
         className="absolute inset-0 h-[115%] w-full object-cover object-center"
         style={{ transform: `translateY(-${offset}px) scale(1.04)` }}

@@ -107,18 +107,18 @@ export const spaces: Space[] = [
 ];
 
 export const galleryImages = [
-  { src: photos.facade, alt: "M L Business Park exterior facade from the main road, Raipur" },
-  { src: photos.rent1, alt: "Furnished modern office workspace inside M L Business Park" },
+  { src: photos.facade, alt: "ML Business Park exterior facade from the main road, Raipur" },
+  { src: photos.rent1, alt: "Furnished modern office workspace inside ML Business Park" },
   {
     src: photos.commercialUnits,
-    alt: "Road-facing view of commercial units and arcade at M L Business Park",
+    alt: "Road-facing view of commercial units and arcade at ML Business Park",
   },
   {
     src: photos.premiumWorkspaces,
-    alt: "Interior corridor and glass-fronted executive suites at M L Business Park",
+    alt: "Interior corridor and glass-fronted executive suites at ML Business Park",
   },
   {
     src: photos.customBusinessSpaces,
-    alt: "Spacious open-plan commercial floor layout at M L Business Park",
+    alt: "Spacious open-plan commercial floor layout at ML Business Park",
   },
 ];

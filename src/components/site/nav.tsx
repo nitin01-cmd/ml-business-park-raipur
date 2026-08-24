@@ -70,7 +70,7 @@ export function SiteNav() {
               scrolled ? "text-foreground" : "text-white",
             )}
           >
-            M L BUSINESS PARK
+            ML BUSINESS PARK
           </span>
         </a>
 
@@ -120,7 +120,7 @@ export function SiteNav() {
       {open && (
         <div className="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-background/98 backdrop-blur-xl lg:hidden">
           <div className="flex items-center justify-between border-b border-border px-5 py-3.5">
-            <span className="font-display text-xs sm:text-sm font-semibold tracking-[0.18em]">M L BUSINESS PARK</span>
+            <span className="font-display text-xs sm:text-sm font-semibold tracking-[0.18em]">ML BUSINESS PARK</span>
             <button
               type="button"
               aria-label="Close menu"
@@ -134,11 +134,11 @@ export function SiteNav() {
           <div className="relative mx-5 my-4 overflow-hidden rounded-lg border border-border bg-muted shrink-0">
             <img
               src="/navbar-logo.png"
-              alt="M L Business Park Commercial Complex Poster"
+              alt="ML Business Park Commercial Complex Poster"
               className="h-36 w-full object-cover object-top"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-4 flex flex-col justify-end">
-              <p className="font-display text-lg text-white font-medium">M L Business Park</p>
+              <p className="font-display text-lg text-white font-medium">ML Business Park</p>
               <p className="text-xs text-white/80">Ramsagar Para, Raipur, Chhattisgarh</p>
             </div>
           </div>

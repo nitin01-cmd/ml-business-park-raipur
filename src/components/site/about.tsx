@@ -20,7 +20,7 @@ export function About() {
           </h2>
           <div className="mt-6 space-y-4 text-xs sm:text-sm leading-relaxed text-muted-foreground">
             <p>
-              M L Business Park is a new-generation commercial project designed to provide modern
+              ML Business Park is a new-generation commercial project designed to provide modern
               workspaces in one of Raipur's strategically positioned commercial areas.
             </p>
             <p>
@@ -39,7 +39,7 @@ export function About() {
           <div className="overflow-hidden rounded-md">
             <img
               src={photos.arcade}
-              alt="Open commercial arcade on the ground floor of M L Business Park"
+              alt="Open commercial arcade on the ground floor of ML Business Park"
               loading="lazy"
               className="aspect-[4/3] w-full object-cover transition-transform duration-[1200ms] hover:scale-[1.03]"
             />
@@ -47,13 +47,13 @@ export function About() {
           <div className="mt-3.5 grid grid-cols-2 gap-3.5">
             <img
               src={photos.corridor}
-              alt="Glass-fronted office corridor at M L Business Park"
+              alt="Glass-fronted office corridor at ML Business Park"
               loading="lazy"
               className="aspect-[4/3] w-full rounded-md object-cover"
             />
             <img
               src={photos.office}
-              alt="Meeting room and office interior at M L Business Park"
+              alt="Meeting room and office interior at ML Business Park"
               loading="lazy"
               className="aspect-[4/3] w-full rounded-md object-cover"
             />

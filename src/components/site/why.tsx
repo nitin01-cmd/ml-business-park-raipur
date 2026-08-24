@@ -38,13 +38,13 @@ export function Why() {
           <Reveal>
             <p className="eyebrow">Why here</p>
             <h2 className="mt-4 font-display text-3xl leading-[1.1] sm:text-5xl">
-              Why Businesses Choose M L Business Park
+              Why Businesses Choose ML Business Park
             </h2>
           </Reveal>
           <Reveal delay={120} className="mt-10 hidden lg:block">
             <img
               src={photos.corridor}
-              alt="Business corridor with professional office units at M L Business Park"
+              alt="Business corridor with professional office units at ML Business Park"
               loading="lazy"
               className="aspect-[4/5] w-full rounded-md object-cover"
             />

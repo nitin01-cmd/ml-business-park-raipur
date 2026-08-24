@@ -23,7 +23,7 @@ export function Spaces() {
                 <div className="overflow-hidden rounded-sm bg-muted">
                   <img
                     src={s.image}
-                    alt={`${s.name} at M L Business Park, Raipur`}
+                    alt={`${s.name} at ML Business Park, Raipur`}
                     loading="lazy"
                     className="aspect-[16/11] w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
                   />
@@ -118,7 +118,7 @@ function SpaceDetail({ space, onClose }: { space: Space; onClose: () => void }) 
         <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full bg-muted">
           <img
             src={space.image}
-            alt={`${space.name} at M L Business Park`}
+            alt={`${space.name} at ML Business Park`}
             className="h-full w-full object-cover"
           />
         </div>

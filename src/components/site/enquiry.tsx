@@ -51,7 +51,7 @@ export function Enquiry() {
             Looking for the Right Space for Your Business?
           </h2>
           <p className="mt-4 text-xs sm:text-sm leading-relaxed text-muted-foreground">
-            Tell us what you need and our team will help you find the right commercial space at M L
+            Tell us what you need and our team will help you find the right commercial space at ML
             Business Park.
           </p>
 

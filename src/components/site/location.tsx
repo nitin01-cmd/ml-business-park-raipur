@@ -13,7 +13,7 @@ export function Location() {
               Located Where Business Happens.
             </h2>
             <p className="mt-5 text-xs sm:text-sm leading-relaxed text-muted-foreground">
-              Situated in the bustling commercial heart of Raipur, M L Business Park offers a
+              Situated in the bustling commercial heart of Raipur, ML Business Park offers a
               strategic location with visibility and convenient connectivity for businesses,
               employees and visitors.
             </p>
@@ -52,7 +52,7 @@ export function Location() {
           <Reveal delay={120} className="min-w-0">
             <div className="overflow-hidden rounded-md border border-border shadow-sm">
               <iframe
-                title="Map showing M L Business Park, Ramsagar Para, Raipur"
+                title="Map showing ML Business Park, Ramsagar Para, Raipur"
                 src={contact.mapEmbed}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

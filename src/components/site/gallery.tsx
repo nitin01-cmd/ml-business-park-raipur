@@ -34,7 +34,7 @@ export function Gallery() {
       <Reveal className="max-w-2xl">
         <p className="eyebrow">Gallery</p>
         <h2 className="mt-4 font-display text-3xl leading-[1.1] sm:text-5xl lg:text-6xl">
-          Explore M L Business Park
+          Explore ML Business Park
         </h2>
       </Reveal>
 

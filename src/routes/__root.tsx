@@ -78,22 +78,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=5" },
-      { title: "M L Business Park | Commercial Spaces & Offices for Rent in Raipur" },
+      { title: "ML Business Park | Commercial Spaces & Offices for Rent in Raipur" },
       {
         name: "description",
         content:
-          "M L Business Park offers premium commercial, retail & office spaces for rent in Ramsagar Para, Raipur, Chhattisgarh. Modern infrastructure, prime location & flexible options.",
+          "ML Business Park offers premium commercial, retail & office spaces for rent in Ramsagar Para, Raipur, Chhattisgarh. Modern infrastructure, prime location & flexible options.",
       },
-      { name: "author", content: "M L Business Park" },
-      { property: "og:title", content: "M L Business Park | Commercial Spaces in Raipur" },
+      { name: "author", content: "ML Business Park" },
+      { property: "og:title", content: "ML Business Park | Commercial Spaces in Raipur" },
       {
         property: "og:description",
         content:
-          "Explore modern commercial spaces, office suites, and retail units for rent at M L Business Park, Ramsagar Para, Raipur.",
+          "Explore modern commercial spaces, office suites, and retail units for rent at ML Business Park, Ramsagar Para, Raipur.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "M L Business Park Raipur" },
+      { name: "twitter:title", content: "ML Business Park Raipur" },
     ],
     links: [
       {

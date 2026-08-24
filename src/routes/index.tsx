@@ -30,7 +30,7 @@ function Index() {
       </main>
       <footer className="border-t border-border bg-background pt-8 pb-24 text-center text-xs text-muted-foreground lg:pb-8">
         <p>
-          © {new Date().getFullYear()} M L Business Park, Ramsagar Para, Raipur. All rights
+          © {new Date().getFullYear()} ML Business Park, Ramsagar Para, Raipur. All rights
           reserved.
         </p>
       </footer>
