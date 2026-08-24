@@ -76,10 +76,7 @@ export function SiteNav() {
             type="button"
             aria-label="Open menu"
             onClick={() => setOpen(true)}
-            className={cn(
-              "lg:hidden",
-              scrolled ? "text-foreground" : "text-primary-foreground",
-            )}
+            className={cn("lg:hidden", scrolled ? "text-foreground" : "text-primary-foreground")}
           >
             <Menu className="h-6 w-6" />
           </button>

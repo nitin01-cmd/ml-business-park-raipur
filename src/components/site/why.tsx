@@ -3,11 +3,31 @@ import { photos } from "@/lib/site-data";
 
 const reasons = [
   { n: "01", title: "Strategic Location", text: "Positioned in the commercial heart of Raipur." },
-  { n: "02", title: "High Visibility", text: "A prominent location with strong commercial presence." },
-  { n: "03", title: "Flexible Property Options", text: "Spaces designed for different business sizes and requirements." },
-  { n: "04", title: "Modern Facilities", text: "Essential infrastructure for comfortable day-to-day operations." },
-  { n: "05", title: "Accessibility", text: "Convenient connectivity for employees, customers and visitors." },
-  { n: "06", title: "Investment Potential", text: "A commercial property positioned within a developing and increasingly connected business zone." },
+  {
+    n: "02",
+    title: "High Visibility",
+    text: "A prominent location with strong commercial presence.",
+  },
+  {
+    n: "03",
+    title: "Flexible Property Options",
+    text: "Spaces designed for different business sizes and requirements.",
+  },
+  {
+    n: "04",
+    title: "Modern Facilities",
+    text: "Essential infrastructure for comfortable day-to-day operations.",
+  },
+  {
+    n: "05",
+    title: "Accessibility",
+    text: "Convenient connectivity for employees, customers and visitors.",
+  },
+  {
+    n: "06",
+    title: "Investment Potential",
+    text: "A commercial property positioned within a developing and increasingly connected business zone.",
+  },
 ];
 
 export function Why() {

@@ -20,8 +20,7 @@ export const contact = {
   plusCode: "6JXH+GF, Raipur",
   mapsLink: "https://www.google.com/maps/search/?api=1&query=6JXH%2BGF+Raipur",
   directions: "https://www.google.com/maps/dir/?api=1&destination=6JXH%2BGF+Raipur",
-  mapEmbed:
-    "https://www.google.com/maps?q=6JXH%2BGF%20Raipur%20Chhattisgarh&output=embed",
+  mapEmbed: "https://www.google.com/maps?q=6JXH%2BGF%20Raipur%20Chhattisgarh&output=embed",
 };
 
 export type Space = {
@@ -46,8 +45,7 @@ export const spaces: Space[] = [
     type: "Office",
     image: photos.office,
     gallery: [photos.office, photos.corridor, photos.facade],
-    blurb:
-      "Professional spaces for startups, companies, consultants and growing teams.",
+    blurb: "Professional spaces for startups, companies, consultants and growing teams.",
     area: "0000 sq. ft.",
     floor: "[Floor]",
     rent: "Contact for pricing",
@@ -75,8 +73,7 @@ export const spaces: Space[] = [
     type: "Premium",
     image: photos.corridor,
     gallery: [photos.corridor, photos.office, photos.arcade],
-    blurb:
-      "Larger spaces designed for established businesses and professional offices.",
+    blurb: "Larger spaces designed for established businesses and professional offices.",
     area: "0000 sq. ft.",
     floor: "[Floor]",
     rent: "Contact for pricing",
@@ -102,7 +99,10 @@ export const spaces: Space[] = [
 
 export const galleryImages = [
   { src: photos.facade, alt: "M L Business Park exterior facade from the main road, Raipur" },
-  { src: photos.arcade, alt: "Open ground-floor arcade and commercial shutters at M L Business Park" },
+  {
+    src: photos.arcade,
+    alt: "Open ground-floor arcade and commercial shutters at M L Business Park",
+  },
   { src: photos.corridor, alt: "Interior corridor with glass office fronts at M L Business Park" },
   { src: photos.office, alt: "Furnished office and meeting room inside M L Business Park" },
   { src: photos.arcade, alt: "Road-facing view of commercial units at M L Business Park" },

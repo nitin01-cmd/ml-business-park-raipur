@@ -11,14 +11,46 @@ import {
 import { Reveal } from "./reveal";
 
 const amenities = [
-  { icon: Clock, title: "24/7 Access", text: "Unrestricted access to your workspace anytime, day or night." },
-  { icon: MapPin, title: "Prime City Location", text: "Strategically positioned in Raipur for strong visibility and accessibility." },
-  { icon: Building2, title: "Premium Spaces", text: "Modern and customizable office and commercial spaces for growing businesses." },
-  { icon: Car, title: "Ample Parking", text: "Dedicated and secure parking facilities for tenants and visitors." },
-  { icon: ShieldCheck, title: "Top-Tier Security", text: "24/7 surveillance and professional security arrangements." },
-  { icon: Route, title: "Easy Connectivity", text: "Convenient access to major roads and transport routes." },
-  { icon: ArrowUpDown, title: "Elevators", text: "Convenient lift access for occupants and visitors." },
-  { icon: Briefcase, title: "Business-Friendly Environment", text: "A professional environment designed for comfortable and productive working." },
+  {
+    icon: Clock,
+    title: "24/7 Access",
+    text: "Unrestricted access to your workspace anytime, day or night.",
+  },
+  {
+    icon: MapPin,
+    title: "Prime City Location",
+    text: "Strategically positioned in Raipur for strong visibility and accessibility.",
+  },
+  {
+    icon: Building2,
+    title: "Premium Spaces",
+    text: "Modern and customizable office and commercial spaces for growing businesses.",
+  },
+  {
+    icon: Car,
+    title: "Ample Parking",
+    text: "Dedicated and secure parking facilities for tenants and visitors.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Top-Tier Security",
+    text: "24/7 surveillance and professional security arrangements.",
+  },
+  {
+    icon: Route,
+    title: "Easy Connectivity",
+    text: "Convenient access to major roads and transport routes.",
+  },
+  {
+    icon: ArrowUpDown,
+    title: "Elevators",
+    text: "Convenient lift access for occupants and visitors.",
+  },
+  {
+    icon: Briefcase,
+    title: "Business-Friendly Environment",
+    text: "A professional environment designed for comfortable and productive working.",
+  },
 ];
 
 export function Amenities() {

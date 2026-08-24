@@ -21,18 +21,17 @@ export function About() {
           </h2>
           <div className="mt-8 space-y-5 text-[0.95rem] leading-relaxed text-muted-foreground">
             <p>
-              M L Business Park is a new-generation commercial project designed to provide
-              modern workspaces in one of Raipur's strategically positioned commercial
-              areas.
+              M L Business Park is a new-generation commercial project designed to provide modern
+              workspaces in one of Raipur's strategically positioned commercial areas.
             </p>
             <p>
-              Located in Ramsagar Para, the project combines accessibility, visibility and
-              essential business amenities to create a practical environment for modern
-              companies and professionals.
+              Located in Ramsagar Para, the project combines accessibility, visibility and essential
+              business amenities to create a practical environment for modern companies and
+              professionals.
             </p>
             <p>
-              The property offers multiple commercial space options suitable for different
-              business requirements and budget ranges.
+              The property offers multiple commercial space options suitable for different business
+              requirements and budget ranges.
             </p>
           </div>
         </Reveal>
@@ -65,7 +64,11 @@ export function About() {
 
       <div className="mt-20 grid gap-px border-t border-border pt-px sm:grid-cols-2 lg:grid-cols-4">
         {stats.map((s, i) => (
-          <Reveal key={s.title} delay={i * 90} className="border-b border-border py-8 lg:border-b-0">
+          <Reveal
+            key={s.title}
+            delay={i * 90}
+            className="border-b border-border py-8 lg:border-b-0"
+          >
             <h3 className="font-display text-2xl">{s.title}</h3>
             <p className="mt-2 text-sm text-muted-foreground">{s.detail}</p>
           </Reveal>

@@ -51,8 +51,8 @@ export function Enquiry() {
             Looking for the Right Space for Your Business?
           </h2>
           <p className="mt-6 text-[0.95rem] leading-relaxed text-muted-foreground">
-            Tell us what you need and our team will help you find the right commercial
-            space at M L Business Park.
+            Tell us what you need and our team will help you find the right commercial space at M L
+            Business Park.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3">
@@ -131,10 +131,10 @@ function Field({
 }: {
   label: string;
   name: string;
-  type?: string;
-  error?: string;
-  required?: boolean;
-  placeholder?: string;
+  type?: string | undefined;
+  error?: string | undefined;
+  required?: boolean | undefined;
+  placeholder?: string | undefined;
 }) {
   return (
     <div className="flex flex-col gap-1.5">

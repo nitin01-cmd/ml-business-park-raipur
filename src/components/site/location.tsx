@@ -13,9 +13,9 @@ export function Location() {
               Located Where Business Happens.
             </h2>
             <p className="mt-7 text-[0.95rem] leading-relaxed text-muted-foreground">
-              Situated in the bustling commercial heart of Raipur, M L Business Park offers
-              a strategic location with visibility and convenient connectivity for
-              businesses, employees and visitors.
+              Situated in the bustling commercial heart of Raipur, M L Business Park offers a
+              strategic location with visibility and convenient connectivity for businesses,
+              employees and visitors.
             </p>
 
             <div className="mt-9 space-y-6 border-t border-border pt-8">
