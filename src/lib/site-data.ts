@@ -4,7 +4,8 @@ import corridor from "@/assets/corridor.jpg.asset.json";
 import office from "@/assets/office.jpg.asset.json";
 
 export const photos = {
-  facade: facade.url,
+  poster: "/poster.jpg",
+  facade: "/poster.jpg",
   arcade: arcade.url,
   corridor: corridor.url,
   office: office.url,

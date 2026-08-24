@@ -1,24 +1,38 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SiteNav } from "@/components/site/nav";
+import { Hero } from "@/components/site/hero";
+import { About } from "@/components/site/about";
+import { Spaces } from "@/components/site/spaces";
+import { Amenities } from "@/components/site/amenities";
+import { Gallery } from "@/components/site/gallery";
+import { Location } from "@/components/site/location";
+import { Why } from "@/components/site/why";
+import { Enquiry } from "@/components/site/enquiry";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background text-foreground selection:bg-accent selection:text-accent-foreground">
+      <SiteNav />
+      <main>
+        <Hero />
+        <About />
+        <Spaces />
+        <Amenities />
+        <Gallery />
+        <Location />
+        <Why />
+        <Enquiry />
+      </main>
+      <footer className="border-t border-border bg-background py-8 text-center text-xs text-muted-foreground">
+        <p>
+          © {new Date().getFullYear()} M L Business Park, Ramsagar Para, Raipur. All rights
+          reserved.
+        </p>
+      </footer>
     </div>
   );
 }

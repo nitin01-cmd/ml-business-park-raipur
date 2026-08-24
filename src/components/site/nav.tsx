@@ -33,14 +33,20 @@ export function SiteNav() {
       )}
     >
       <nav className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 lg:px-10">
-        <a
-          href="#home"
-          className={cn(
-            "min-w-0 truncate font-display text-lg tracking-[0.28em] transition-colors sm:text-xl",
-            scrolled ? "text-foreground" : "text-primary-foreground",
-          )}
-        >
-          M L BUSINESS PARK
+        <a href="#home" className="flex min-w-0 items-center gap-3 font-display transition-colors">
+          <img
+            src="/poster.jpg"
+            alt="M L Business Park Ramsagar Para Raipur"
+            className="h-8 w-8 shrink-0 rounded-full border border-white/30 object-cover shadow-sm transition-transform hover:scale-105"
+          />
+          <span
+            className={cn(
+              "truncate text-lg tracking-[0.28em] transition-colors sm:text-xl",
+              scrolled ? "text-foreground" : "text-primary-foreground",
+            )}
+          >
+            M L BUSINESS PARK
+          </span>
         </a>
 
         <div className="flex items-center gap-8">
@@ -84,27 +90,47 @@ export function SiteNav() {
       </nav>
 
       {open && (
-        <div className="fixed inset-0 z-50 bg-background lg:hidden">
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-background lg:hidden">
           <div className="flex items-center justify-between px-5 py-4">
-            <span className="font-display text-lg tracking-[0.28em]">M L</span>
+            <div className="flex items-center gap-2">
+              <img
+                src="/poster.jpg"
+                alt="M L Business Park"
+                className="h-7 w-7 rounded-full object-cover"
+              />
+              <span className="font-display text-lg tracking-[0.28em]">M L BUSINESS PARK</span>
+            </div>
             <button type="button" aria-label="Close menu" onClick={() => setOpen(false)}>
               <X className="h-6 w-6" />
             </button>
           </div>
-          <ul className="mt-6 flex flex-col gap-1 px-5">
+
+          <div className="relative mx-5 my-3 overflow-hidden rounded-md border border-border bg-muted">
+            <img
+              src="/poster.jpg"
+              alt="M L Business Park Commercial Complex Poster"
+              className="h-36 w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-4 flex flex-col justify-end">
+              <p className="font-display text-lg text-white">M L Business Park</p>
+              <p className="text-xs text-white/80">Ramsagar Para, Raipur</p>
+            </div>
+          </div>
+
+          <ul className="mt-4 flex flex-col gap-1 px-5">
             {links.map((l) => (
               <li key={l.href}>
                 <a
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="block border-b border-border py-4 font-display text-3xl"
+                  className="block border-b border-border py-3.5 font-display text-2xl"
                 >
                   {l.label}
                 </a>
               </li>
             ))}
           </ul>
-          <div className="mt-8 flex flex-col gap-3 px-5">
+          <div className="mt-6 flex flex-col gap-3 px-5 pb-8">
             <a
               href="#enquire"
               onClick={() => setOpen(false)}

@@ -32,34 +32,43 @@ export function Hero() {
             transform: mounted ? "none" : "translateY(28px)",
           }}
         >
-          <p className="eyebrow text-primary-foreground/70">
-            Commercial Property · Raipur, Chhattisgarh
-          </p>
-          <h1 className="mt-5 font-display text-[3rem] leading-[0.95] tracking-[0.02em] text-primary-foreground sm:text-7xl lg:text-8xl">
+          <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 backdrop-blur-md">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75"></span>
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent"></span>
+            </span>
+            <span className="text-xs font-medium tracking-wider text-primary-foreground/90 uppercase">
+              Prime Commercial Hub · Ramsagar Para
+            </span>
+          </div>
+
+          <h1 className="font-display text-[3rem] leading-[0.95] tracking-[0.02em] text-primary-foreground sm:text-7xl lg:text-8xl">
             M L BUSINESS PARK
           </h1>
           <p className="mt-6 max-w-xl font-display text-2xl leading-snug text-primary-foreground/90 sm:text-3xl">
-            Commercial Spaces Designed for Business.
+            Commercial Spaces Designed for Business Success.
           </p>
-          <p className="mt-3 text-sm text-primary-foreground/70">Ramsagar Para, Raipur</p>
+          <p className="mt-3 text-sm text-primary-foreground/75">
+            Punjab Oil Mill Gali, Ramsagar Para, Raipur, Chhattisgarh 492009
+          </p>
 
-          <div className="mt-10 flex flex-wrap gap-3">
+          <div className="mt-10 flex flex-wrap gap-4">
             <a
               href="#spaces"
-              className="bg-primary-foreground px-8 py-4 text-[0.7rem] tracking-[0.2em] text-foreground uppercase transition-transform duration-300 hover:-translate-y-0.5"
+              className="bg-accent px-8 py-4 text-[0.7rem] tracking-[0.2em] text-accent-foreground uppercase transition-all duration-300 hover:bg-accent/90 hover:shadow-lg hover:-translate-y-0.5"
             >
               Explore Spaces
             </a>
             <a
               href="#enquire"
-              className="border border-primary-foreground/60 px-8 py-4 text-[0.7rem] tracking-[0.2em] text-primary-foreground uppercase transition-colors duration-300 hover:bg-primary-foreground/10"
+              className="border border-primary-foreground/60 bg-black/30 px-8 py-4 text-[0.7rem] tracking-[0.2em] text-primary-foreground uppercase backdrop-blur-sm transition-all duration-300 hover:bg-primary-foreground/20"
             >
               Enquire Now
             </a>
           </div>
 
-          <p className="mt-10 flex items-center gap-2 text-xs tracking-wide text-primary-foreground/70">
-            <MapPin className="h-4 w-4" aria-hidden />
+          <p className="mt-10 flex items-center gap-2 text-xs tracking-wide text-primary-foreground/75">
+            <MapPin className="h-4 w-4 text-accent" aria-hidden />
             Ramsagar Para, Raipur, Chhattisgarh
           </p>
         </div>
