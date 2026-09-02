@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { Phone, MessageCircle } from "lucide-react";
+import { Phone, MessageCircle, Send, CheckCircle2, Building, Mail, MapPin } from "lucide-react";
 import { z } from "zod";
 import { toast } from "sonner";
 import { Reveal } from "./reveal";
@@ -17,10 +17,11 @@ const schema = z.object({
 });
 
 const field =
-  "w-full border-b border-border bg-transparent py-3 text-base sm:text-sm outline-none transition-colors placeholder:text-muted-foreground/70 focus:border-accent";
+  "w-full rounded-md border border-border bg-card px-3.5 py-3 text-sm outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-accent focus:ring-1 focus:ring-accent";
 
 export function Enquiry() {
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [submitted, setSubmitted] = useState(false);
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -36,86 +37,185 @@ export function Enquiry() {
       return;
     }
     setErrors({});
+    setSubmitted(true);
     form.reset();
-    toast.success("Enquiry received", {
-      description: "Our team will get back to you shortly.",
+    toast.success("Enquiry Received Successfully", {
+      description: "Our commercial leasing team will contact you shortly.",
     });
   }
 
   return (
-    <section id="enquire" className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-24 lg:px-10 lg:py-32">
-      <div className="grid gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-20">
-        <Reveal className="min-w-0">
-          <p className="eyebrow">Enquiry</p>
-          <h2 className="mt-4 font-display text-3xl leading-[1.1] sm:text-5xl">
-            Looking for the Right Space for Your Business?
-          </h2>
-          <p className="mt-4 text-xs sm:text-sm leading-relaxed text-muted-foreground">
-            Tell us what you need and our team will help you find the right commercial space at ML
-            Business Park.
-          </p>
+    <section
+      id="enquire"
+      className="relative py-20 sm:py-28 lg:py-32 bg-primary text-primary-foreground overflow-hidden"
+    >
+      {/* Subtle ambient lighting */}
+      <div className="absolute top-0 right-1/4 h-96 w-96 rounded-full bg-accent/15 blur-3xl pointer-events-none" />
 
-          <div className="mt-8 flex flex-col sm:flex-row gap-3">
-            <a
-              href={contact.phoneHref}
-              className="flex min-h-[44px] items-center justify-center gap-2 border border-foreground/25 px-6 py-3.5 text-[0.68rem] font-medium tracking-[0.18em] uppercase transition-colors hover:border-accent hover:text-accent rounded active:bg-muted"
-            >
-              <Phone className="h-4 w-4" /> Call Now
-            </a>
-            <a
-              href={contact.whatsapp}
-              target="_blank"
-              rel="noreferrer"
-              className="flex min-h-[44px] items-center justify-center gap-2 border border-foreground/25 px-6 py-3.5 text-[0.68rem] font-medium tracking-[0.18em] uppercase transition-colors hover:border-accent hover:text-accent rounded active:bg-muted"
-            >
-              <MessageCircle className="h-4 w-4 text-emerald-600 dark:text-emerald-400" /> WhatsApp Enquiry
-            </a>
-          </div>
-        </Reveal>
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-16 items-start">
+          {/* Left Column: CTA Messaging & Direct Contacts */}
+          <Reveal className="min-w-0">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1 text-[0.65rem] font-medium tracking-[0.2em] text-white uppercase backdrop-blur-sm">
+              Commercial Leasing Desk
+            </span>
 
-        <Reveal delay={120} className="min-w-0">
-          <form onSubmit={onSubmit} noValidate className="grid gap-6 sm:grid-cols-2">
-            <Field label="Name" name="name" error={errors["name"]} required />
-            <Field label="Company / Business Name" name="company" />
-            <Field label="Phone Number" name="phone" type="tel" error={errors["phone"]} required />
-            <Field label="Email" name="email" type="email" error={errors["email"]} />
-            <div className="flex flex-col gap-1.5">
-              <label htmlFor="spaceRequired" className="eyebrow">
-                Space Required
-              </label>
-              <select id="spaceRequired" name="spaceRequired" className={field} defaultValue="">
-                <option value="">Select an option</option>
-                <option>Office Space</option>
-                <option>Commercial Unit</option>
-                <option>Premium Workspace</option>
-                <option>Custom Business Space</option>
-              </select>
-            </div>
-            <Field label="Approximate Area" name="area" placeholder="e.g. 800 sq. ft." />
-            <Field label="Preferred Floor" name="floor" placeholder="e.g. First floor" />
-            <div className="flex flex-col gap-1.5 sm:col-span-2">
-              <label htmlFor="message" className="eyebrow">
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={3}
-                maxLength={1000}
-                className={`${field} resize-none`}
-                placeholder="Tell us about your requirement"
-              />
-            </div>
-            <div className="sm:col-span-2 pt-2">
-              <button
-                type="submit"
-                className="flex min-h-[46px] w-full items-center justify-center bg-accent px-8 py-3.5 text-[0.7rem] font-medium tracking-[0.2em] text-accent-foreground uppercase transition-opacity hover:opacity-90 active:scale-[0.99] sm:w-auto rounded"
+            <h2 className="mt-4 font-display text-3xl leading-[1.12] sm:text-5xl lg:text-6xl font-normal text-white">
+              Find the Right Space for Your Business
+            </h2>
+
+            <p className="mt-4 text-xs sm:text-sm md:text-base leading-relaxed text-white/80 font-light">
+              Have questions about availability, commercial spaces or facilities? Get in touch with
+              our team.
+            </p>
+
+            {/* Direct Action Buttons: Call, WhatsApp, Email */}
+            <div className="mt-8 flex flex-col sm:flex-row gap-3">
+              <a
+                href={contact.phoneHref}
+                className="flex min-h-[46px] flex-1 items-center justify-center gap-2 rounded bg-accent px-6 py-3 text-[0.7rem] font-medium tracking-[0.18em] uppercase text-accent-foreground transition-all hover:bg-accent/90 active:scale-[0.98]"
               >
-                Request a Callback
-              </button>
+                <Phone className="h-4 w-4" /> Call Us
+              </a>
+              <a
+                href={contact.whatsapp}
+                target="_blank"
+                rel="noreferrer"
+                className="flex min-h-[46px] flex-1 items-center justify-center gap-2 rounded border border-white/30 bg-white/10 px-6 py-3 text-[0.7rem] font-medium tracking-[0.18em] uppercase text-white backdrop-blur-sm transition-colors hover:bg-white/20 active:scale-[0.98]"
+              >
+                <MessageCircle className="h-4 w-4 text-emerald-400" /> WhatsApp Us
+              </a>
             </div>
-          </form>
-        </Reveal>
+
+            {/* Property Contact Info */}
+            <div className="mt-10 space-y-4 border-t border-white/15 pt-6 text-xs text-white/75">
+              <div className="flex items-start gap-3">
+                <MapPin className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                <span>{contact.address}</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Mail className="h-4 w-4 text-accent shrink-0" />
+                <a href={`mailto:${contact.email}`} className="hover:text-white transition-colors">
+                  {contact.email}
+                </a>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Right Column: Interactive Enquiry Form */}
+          <Reveal delay={120} className="min-w-0">
+            <div className="rounded-xl border border-white/15 bg-background/95 p-6 sm:p-8 text-foreground shadow-2xl backdrop-blur-md">
+              <h3 className="font-display text-2xl font-medium text-foreground">
+                Request Space Availability
+              </h3>
+              <p className="mt-1 text-xs text-muted-foreground">
+                Fill out your details below and our team will get back to you with matching space
+                options.
+              </p>
+
+              {submitted ? (
+                <div className="mt-8 flex flex-col items-center justify-center rounded-lg border border-emerald-600/30 bg-emerald-500/10 p-8 text-center">
+                  <CheckCircle2 className="h-12 w-12 text-emerald-600" />
+                  <h4 className="mt-4 font-display text-2xl font-medium text-foreground">
+                    Thank You!
+                  </h4>
+                  <p className="mt-2 text-xs sm:text-sm text-muted-foreground max-w-sm">
+                    Your enquiry has been received. Our representative will contact you promptly.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setSubmitted(false)}
+                    className="mt-6 rounded bg-accent px-6 py-2.5 text-xs font-medium tracking-wider uppercase text-accent-foreground"
+                  >
+                    Submit Another Enquiry
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={onSubmit} noValidate className="mt-6 grid gap-4 sm:grid-cols-2">
+                  <Field
+                    label="Full Name"
+                    name="name"
+                    error={errors["name"]}
+                    placeholder="e.g. Rahul Sharma"
+                    required
+                  />
+                  <Field
+                    label="Business / Company Name"
+                    name="company"
+                    placeholder="e.g. Apex Enterprises"
+                  />
+                  <Field
+                    label="Phone Number"
+                    name="phone"
+                    type="tel"
+                    error={errors["phone"]}
+                    placeholder="e.g. +91 98765 43210"
+                    required
+                  />
+                  <Field
+                    label="Email Address"
+                    name="email"
+                    type="email"
+                    error={errors["email"]}
+                    placeholder="e.g. rahul@company.com"
+                  />
+
+                  <div className="flex flex-col gap-1.5">
+                    <label htmlFor="spaceRequired" className="eyebrow">
+                      Space Type
+                    </label>
+                    <select
+                      id="spaceRequired"
+                      name="spaceRequired"
+                      className={field}
+                      defaultValue=""
+                    >
+                      <option value="">Select space type</option>
+                      <option value="Office Space">Office Space (500 - 3,500 sq. ft.)</option>
+                      <option value="Commercial Unit">Commercial Unit (800 - 4,000 sq. ft.)</option>
+                      <option value="Premium Workspace">
+                        Premium Workspace (1,200 - 5,000 sq. ft.)
+                      </option>
+                      <option value="Custom Business Space">
+                        Custom Business Space (Customizable)
+                      </option>
+                    </select>
+                  </div>
+
+                  <Field
+                    label="Required Area (approx)"
+                    name="area"
+                    placeholder="e.g. 1,500 sq. ft."
+                  />
+
+                  <div className="flex flex-col gap-1.5 sm:col-span-2">
+                    <label htmlFor="message" className="eyebrow">
+                      Additional Details / Requirements
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={3}
+                      maxLength={1000}
+                      className={`${field} resize-none`}
+                      placeholder="Specify preferred floor, moving timeline, or any specific requirements..."
+                    />
+                  </div>
+
+                  <div className="sm:col-span-2 pt-2">
+                    <button
+                      type="submit"
+                      className="flex min-h-[46px] w-full items-center justify-center gap-2 rounded bg-accent px-8 py-3 text-[0.7rem] font-medium tracking-[0.2em] text-accent-foreground uppercase transition-all hover:bg-accent/90 active:scale-[0.98]"
+                    >
+                      <Send className="h-3.5 w-3.5" />
+                      <span>Submit Business Enquiry</span>
+                    </button>
+                  </div>
+                </form>
+              )}
+            </div>
+          </Reveal>
+        </div>
       </div>
     </section>
   );

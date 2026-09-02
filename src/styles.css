@@ -167,6 +167,23 @@
   .safe-bottom {
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
+
+  .premium-card {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .premium-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px -12px rgba(0, 0, 0, 0.08);
+    border-color: color-mix(in oklch, var(--color-accent) 40%, var(--color-border));
+  }
+
+  .glass-card {
+    background: color-mix(in oklch, var(--color-card) 85%, transparent);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid color-mix(in oklch, var(--color-border) 80%, transparent);
+  }
 }
-
-

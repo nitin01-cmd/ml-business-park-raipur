@@ -5,11 +5,13 @@ import { contact } from "@/lib/site-data";
 
 const links = [
   { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Spaces", href: "#spaces" },
+  { label: "Overview", href: "#about" },
   { label: "Amenities", href: "#amenities" },
-  { label: "Gallery", href: "#gallery" },
+  { label: "Spaces", href: "#spaces" },
+  { label: "Why Us", href: "#why" },
   { label: "Location", href: "#location" },
+  { label: "Gallery", href: "#gallery" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 export function SiteNav() {
@@ -109,7 +111,9 @@ export function SiteNav() {
             onClick={() => setOpen(true)}
             className={cn(
               "flex h-10 w-10 items-center justify-center rounded-md border border-white/20 transition-colors lg:hidden active:scale-95",
-              scrolled ? "border-border text-foreground bg-muted/50" : "text-primary-foreground bg-black/20 backdrop-blur-xs",
+              scrolled
+                ? "border-border text-foreground bg-muted/50"
+                : "text-primary-foreground bg-black/20 backdrop-blur-xs",
             )}
           >
             <Menu className="h-5 w-5" />
@@ -120,7 +124,9 @@ export function SiteNav() {
       {open && (
         <div className="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-background/98 backdrop-blur-xl lg:hidden">
           <div className="flex items-center justify-between border-b border-border px-5 py-3.5">
-            <span className="font-display text-xs sm:text-sm font-semibold tracking-[0.18em]">ML BUSINESS PARK</span>
+            <span className="font-display text-xs sm:text-sm font-semibold tracking-[0.18em]">
+              ML BUSINESS PARK
+            </span>
             <button
               type="button"
               aria-label="Close menu"
@@ -172,7 +178,8 @@ export function SiteNav() {
               rel="noreferrer"
               className="flex min-h-[44px] items-center justify-center gap-2 border border-border px-6 py-3 text-xs tracking-[0.18em] uppercase font-medium rounded text-foreground active:bg-muted"
             >
-              <MessageCircle className="h-4 w-4 text-emerald-600 dark:text-emerald-400" /> WhatsApp Direct
+              <MessageCircle className="h-4 w-4 text-emerald-600 dark:text-emerald-400" /> WhatsApp
+              Direct
             </a>
           </div>
         </div>

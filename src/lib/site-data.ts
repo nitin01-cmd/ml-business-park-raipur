@@ -1,6 +1,6 @@
 export const photos = {
-  poster: "/navbar-logo.png",
-  facade: "/navbar-logo.png",
+  poster: "/poster.jpg",
+  facade: "/poster.jpg",
   rent1: "/rent_1.webp",
   commercialUnits: "/commercial_units.png",
   premiumWorkspaces: "/premium_workspaces.png",
@@ -120,5 +120,43 @@ export const galleryImages = [
   {
     src: photos.customBusinessSpaces,
     alt: "Spacious open-plan commercial floor layout at ML Business Park",
+  },
+];
+
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+export const faqs: FaqItem[] = [
+  {
+    question: "What types of commercial spaces are available?",
+    answer:
+      "ML Business Park offers flexible commercial spaces including Office Spaces (500 – 3,500 sq. ft.), Ground & 1st Floor Commercial Units (800 – 4,000 sq. ft.), Premium Executive Workspaces (1,200 – 5,000 sq. ft.), and fully customizable business floor plates tailored to your operational requirements.",
+  },
+  {
+    question: "Where is the property located?",
+    answer:
+      "The property is located at Punjab Oil Mill Gali, Bhaisthan, Bhawani Patna, Ramsagar Para, Jawahar Nagar, Raipur, Chhattisgarh 492009 (Google Plus Code: 6JXH+GF, Raipur), in the commercial core of Raipur with straightforward road connectivity.",
+  },
+  {
+    question: "What amenities are available?",
+    answer:
+      "Key amenities include dedicated parking facilities for occupants and visitors, smooth lift/elevator access to all floors, modern commercial infrastructure, 24/7 security & building access, and a professional, business-friendly environment.",
+  },
+  {
+    question: "Is parking available?",
+    answer:
+      "Yes, ML Business Park features dedicated on-site parking facilities designed for occupants, business staff, visiting customers, and clients.",
+  },
+  {
+    question: "How can I enquire about a commercial space?",
+    answer:
+      "You can submit your requirements through the enquiry form on this website, connect directly with our leasing team via WhatsApp, or call us to schedule an on-site visit and discuss space specifications.",
+  },
+  {
+    question: "How can I contact the management/team?",
+    answer:
+      "You can contact our leasing team by calling +91 00000 00000, messaging us on WhatsApp, emailing enquiry@mlbusinesspark.in, or visiting the ML Business Park site in Ramsagar Para, Raipur.",
   },
 ];

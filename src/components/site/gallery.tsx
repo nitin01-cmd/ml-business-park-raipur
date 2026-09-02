@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
 import { Reveal } from "./reveal";
 import { galleryImages } from "@/lib/site-data";
 
@@ -16,7 +16,9 @@ export function Gallery() {
       if (open === null) return;
       if (e.key === "Escape") setOpen(null);
       if (e.key === "ArrowLeft") {
-        setOpen((prev) => (prev !== null ? (prev - 1 + galleryImages.length) % galleryImages.length : null));
+        setOpen((prev) =>
+          prev !== null ? (prev - 1 + galleryImages.length) % galleryImages.length : null,
+        );
       }
       if (e.key === "ArrowRight") {
         setOpen((prev) => (prev !== null ? (prev + 1) % galleryImages.length : null));
@@ -30,31 +32,43 @@ export function Gallery() {
   }, [open]);
 
   return (
-    <section id="gallery" className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-24 lg:px-10 lg:py-32">
+    <section
+      id="gallery"
+      className="mx-auto max-w-7xl px-4 sm:px-6 py-20 sm:py-28 lg:px-10 lg:py-32"
+    >
       <Reveal className="max-w-2xl">
-        <p className="eyebrow">Gallery</p>
-        <h2 className="mt-4 font-display text-3xl leading-[1.1] sm:text-5xl lg:text-6xl">
+        <p className="eyebrow">Infrastructure & Spaces</p>
+        <h2 className="mt-4 font-display text-3xl leading-[1.12] sm:text-5xl lg:text-6xl font-normal">
           Explore ML Business Park
         </h2>
+        <p className="mt-3 text-xs sm:text-sm text-muted-foreground font-light">
+          A visual look at the commercial units, exterior elevation, and professional office
+          corridors.
+        </p>
       </Reveal>
 
-      <div className="mt-10 sm:mt-14 columns-1 gap-4 sm:columns-2 lg:columns-3 [&>*]:mb-4">
+      <div className="mt-12 columns-1 gap-5 sm:columns-2 lg:columns-3 [&>*]:mb-5">
         {galleryImages.map((img, i) => (
-          <Reveal key={i} delay={(i % 3) * 80} className="break-inside-avoid">
+          <Reveal key={i} delay={(i % 3) * 70} className="break-inside-avoid">
             <button
               type="button"
               onClick={() => setOpen(i)}
-              className="group block w-full overflow-hidden rounded-sm focus:outline-none focus:ring-2 focus:ring-accent"
+              className="group relative block w-full overflow-hidden rounded-xl border border-border bg-muted shadow-sm focus:outline-none focus:ring-2 focus:ring-accent"
               aria-label={`Open image: ${img.alt}`}
             >
               <img
                 src={img.src}
                 alt={img.alt}
                 loading="lazy"
-                className={`w-full object-cover transition-transform duration-[900ms] group-hover:scale-[1.04] ${
+                className={`w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 ${
                   i % 3 === 1 ? "aspect-[3/4]" : "aspect-[4/3]"
                 }`}
               />
+              <div className="absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end p-4">
+                <span className="flex items-center gap-1.5 text-xs text-white font-medium">
+                  <Maximize2 className="h-3.5 w-3.5 text-accent" /> View Image
+                </span>
+              </div>
             </button>
           </Reveal>
         ))}
@@ -62,7 +76,7 @@ export function Gallery() {
 
       {open !== null && (
         <div
-          className="fixed inset-0 z-[60] flex flex-col items-center justify-center bg-black/90 p-4 backdrop-blur-md"
+          className="fixed inset-0 z-[70] flex flex-col items-center justify-center bg-black/90 p-4 backdrop-blur-md"
           role="dialog"
           aria-modal="true"
           onClick={() => setOpen(null)}
@@ -70,7 +84,7 @@ export function Gallery() {
           <button
             type="button"
             aria-label="Close gallery"
-            className="absolute top-4 right-4 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-black/60 text-white shadow-lg backdrop-blur-sm transition-transform active:scale-95 hover:bg-black/80"
+            className="absolute top-4 right-4 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-black/60 text-white shadow-lg backdrop-blur-sm transition-transform active:scale-95 hover:bg-black/80 border border-white/20"
             onClick={() => setOpen(null)}
           >
             <X className="h-6 w-6" />
@@ -80,7 +94,7 @@ export function Gallery() {
           <button
             type="button"
             aria-label="Previous image"
-            className="absolute left-3 top-1/2 z-10 -translate-y-1/2 flex h-11 w-11 items-center justify-center rounded-full bg-black/60 text-white shadow-lg backdrop-blur-sm transition-transform active:scale-95 hover:bg-black/80 sm:left-6"
+            className="absolute left-3 top-1/2 z-10 -translate-y-1/2 flex h-11 w-11 items-center justify-center rounded-full bg-black/60 text-white shadow-lg backdrop-blur-sm transition-transform active:scale-95 hover:bg-black/80 border border-white/20 sm:left-6"
             onClick={(e) => {
               e.stopPropagation();
               setOpen((open - 1 + galleryImages.length) % galleryImages.length);
@@ -92,7 +106,7 @@ export function Gallery() {
           <button
             type="button"
             aria-label="Next image"
-            className="absolute right-3 top-1/2 z-10 -translate-y-1/2 flex h-11 w-11 items-center justify-center rounded-full bg-black/60 text-white shadow-lg backdrop-blur-sm transition-transform active:scale-95 hover:bg-black/80 sm:right-6"
+            className="absolute right-3 top-1/2 z-10 -translate-y-1/2 flex h-11 w-11 items-center justify-center rounded-full bg-black/60 text-white shadow-lg backdrop-blur-sm transition-transform active:scale-95 hover:bg-black/80 border border-white/20 sm:right-6"
             onClick={(e) => {
               e.stopPropagation();
               setOpen((open + 1) % galleryImages.length);
@@ -108,7 +122,7 @@ export function Gallery() {
             <img
               src={galleryImages[open]!.src}
               alt={galleryImages[open]!.alt}
-              className="max-h-[75vh] w-auto max-w-full rounded-md object-contain shadow-2xl"
+              className="max-h-[75vh] w-auto max-w-full rounded-lg object-contain shadow-2xl"
             />
             <p className="mt-4 text-center text-xs sm:text-sm text-white/90 max-w-md px-4 font-light">
               {galleryImages[open]!.alt}
